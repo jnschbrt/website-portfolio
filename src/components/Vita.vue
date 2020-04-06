@@ -1,8 +1,10 @@
 <template>
-  <section class="vita">
+  <section id="vita">
     <div class="py-12">
       <v-container class="text-center">
-        <h2 class="display-2 font-weight-bold mb-3">VITA</h2>
+        <h2 class="display-2 font-weight-bold mb-3" data-aos="zoom-in">
+          VITA
+        </h2>
 
         <v-responsive class="mx-auto mb-8" width="56">
           <v-divider class="mb-1"></v-divider>
@@ -17,6 +19,7 @@
               :key="i"
               :color="item.color"
               :icon="item.icon ? item.icon : 'mdi-plus'"
+              :data-aos="i % 2 == 0 ? 'fade-left' : 'fade-right'"
             >
               <span slot="opposite">{{ item.from }} - {{ item.to }}</span>
               <v-card class="elevation-2">

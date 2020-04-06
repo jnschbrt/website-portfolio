@@ -8,7 +8,7 @@ Vue.config.productionTip = false
 
 new Vue({
   created() {
-    AOS.init()
+    AOS.init({ once: true })
   },
   vuetify,
   render: h => h(App)
