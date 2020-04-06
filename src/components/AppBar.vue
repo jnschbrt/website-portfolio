@@ -1,25 +1,41 @@
 <template>
-  <v-app-bar app hide-on-scroll class="app-bar">
-    <v-avatar class="mr-3" color="grey lighten-5">
-      <v-img contain max-height="70%" src="/assets/portrait_bw.jpg"></v-img>
-    </v-avatar>
-
-    <v-toolbar-title class="headline">
-      Jonas Schubert
-    </v-toolbar-title>
+  <v-app-bar
+    fixed
+    class="white--text"
+    color="transparent"
+    hide-on-scroll
+    elevation="0"
+  >
+    <v-layout class="d-flex flex-row-reverse">
+      <v-btn
+        v-for="(link, i) in links"
+        :key="i"
+        @click="$vuetify.goTo(link.to)"
+        text
+        class="white--text"
+      >
+        {{ link.text }}
+      </v-btn>
+    </v-layout>
   </v-app-bar>
 </template>
 
 <script>
-export default {}
+// import { headroom } from 'vue-headroom'
+export default {
+  components: {
+    // headroom
+  },
+  data() {
+    return {
+      links: [
+        { to: '#about-me', text: 'Über mich' },
+        { to: '#vita', text: 'Vita' },
+        { to: '#contact', text: 'Kontakt' }
+      ]
+    }
+  }
+}
 </script>
 
-<style>
-.app-bar {
-  height: 70px;
-  background: transparent;
-  border: none;
-  transition: background-color 0.3s;
-  will-change: transform;
-}
-</style>
+<style></style>

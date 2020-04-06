@@ -11,7 +11,7 @@
         </v-responsive>
 
         <v-responsive>
-          <v-timeline :align-top="alignTop" :dense="dense" :reverse="reverse">
+          <v-timeline :align-top="false">
             <v-timeline-item
               v-for="(item, i) in items"
               :key="i"

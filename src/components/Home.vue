@@ -1,46 +1,29 @@
 <template>
-  <section id="hero">
-    <v-row no-gutters>
-      <v-img
-        :min-height="'calc(100vh - ' + $vuetify.application.top + 'px)'"
-        src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80"
-      >
-        <v-theme-provider dark>
-          <v-container fill-height>
-            <v-row align="start" class="white--text mx-auto" justify="center">
-              <v-col class="white--text text-center" cols="12" tag="h1">
-                <span
-                  :class="[
-                    $vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4'
-                  ]"
-                  class="font-weight-black"
-                >
-                  Jonas Schubert
-                </span>
-
-                <br />
-
-                <span
-                  class="font-weight-light"
-                  :class="[
-                    $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2'
-                  ]"
-                >
-                  Full-Stack-Developer
-                </span>
-              </v-col>
-
-              <div class="scroll-downs" @click="$vuetify.goTo('#about-me')">
-                <div class="mousey">
-                  <div class="scroller"></div>
-                </div>
-              </div>
-            </v-row>
-          </v-container>
-        </v-theme-provider>
-      </v-img>
+  <v-parallax src="../assets/parralax.jpg" height="786">
+    <v-row align="center" justify="center">
+      <v-col class="text-center" cols="12">
+        <h1
+          class="font-weight-black mb-8"
+          :class="[$vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
+        >
+          Jonas Schubert
+        </h1>
+        <h2
+          class="font-weight-light"
+          :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
+        >
+          Full-Stack-Developer
+        </h2>
+      </v-col>
     </v-row>
-  </section>
+    <v-row>
+      <div class="scroll-downs" @click="$vuetify.goTo('#about-me')">
+        <div class="mousey">
+          <div class="scroller"></div>
+        </div>
+      </div>
+    </v-row>
+  </v-parallax>
 </template>
 
 <script>
@@ -76,5 +59,18 @@ export default {}
   animation-duration: 2.2s;
   animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
   animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
 }
 </style>
