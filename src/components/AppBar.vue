@@ -1,18 +1,12 @@
 <template>
-  <v-app-bar
-    fixed
-    class="white--text"
-    color="transparent"
-    hide-on-scroll
-    elevation="0"
-  >
+  <v-app-bar fixed color="transparent" hide-on-scroll elevation="0">
     <v-layout class="d-flex flex-row-reverse">
       <v-btn
         v-for="(link, i) in links"
         :key="i"
         @click="$vuetify.goTo(link.to)"
         text
-        class="white--text"
+        class="white--text font-weight-light subtitle-1	"
       >
         {{ link.text }}
       </v-btn>

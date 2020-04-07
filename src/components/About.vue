@@ -33,7 +33,7 @@
 
       <div></div>
 
-      <v-btn class="grey--text font-weight-bold" color="grey" outlined large>
+      <v-btn class="blue--text font-weight-bold" color="blue" outlined large>
         Contact me
       </v-btn>
     </v-container>
