@@ -90,7 +90,7 @@ export default {
         },
         {
           icon: 'mdi-linkedin',
-          link: 'www.linkedin.com/in/schubert-jonas',
+          link: 'https://www.linkedin.com/in/schubert-jonas',
           tooltip: 'LinkedIn'
         }
       ]
