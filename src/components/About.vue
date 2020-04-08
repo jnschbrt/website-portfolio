@@ -60,7 +60,7 @@
 
       <v-btn
         class="white--text font-weight-bold hvr-grow"
-        color="blue-grey darken-4"
+        color="blue lighten-1"
         large
       >
         Get in touch
