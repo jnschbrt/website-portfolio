@@ -58,7 +58,11 @@
         </div>
       </v-row>
 
-      <v-btn class="white--text font-weight-bold hvr-grow" color="black" large>
+      <v-btn
+        class="white--text font-weight-bold hvr-grow"
+        color="blue-grey darken-4"
+        large
+      >
         Get in touch
       </v-btn>
     </v-container>

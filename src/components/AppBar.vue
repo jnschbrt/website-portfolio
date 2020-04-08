@@ -6,7 +6,7 @@
         :key="i"
         @click="$vuetify.goTo(link.to)"
         text
-        class="white--text font-weight-light subtitle-1	"
+        class="white--text font-medium subtitle-1	"
       >
         {{ link.text }}
       </v-btn>

@@ -24,7 +24,7 @@
               <span slot="opposite">{{ item.from }} - {{ item.to }}</span>
               <v-card class="elevation-2">
                 <v-card-title class="headline">{{ item.title }}</v-card-title>
-                <v-card-text>
+                <v-card-text class="text-justify">
                   {{ item.text }}
                 </v-card-text>
               </v-card>
@@ -43,43 +43,51 @@ export default {
       items: [
         {
           icon: 'mdi-school',
-          from: '2006',
-          to: '2012',
-          title: 'Qualifikation Oberstufe',
-          text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
-        },
-        {
-          icon: 'mdi-calendar-month',
           from: '2012',
           to: '2014',
           title: 'Fachhochschulreife',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'Im Juni 2011 verlies ich die Maximilian-Kolbe-Gesamtschule in Saerbeck mit der Fachhochschulreife.'
         },
         {
-          icon: 'mdi-calendar-month',
+          icon: 'mdi-account-arrow-left',
           from: '2014',
           to: '2017',
-          title: 'Ausbildung',
+          title: 'Ausbildung Wilken Software Group',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'Im August 2014 begann ich meine Ausbildung bei der Wilken Software Group GmbH. Im Rahmen der Ausbildung beschäftigte ich mich primär mit der Entwicklung im Bereich Microsoft Dynamic Navision und der Schnittstellenentwicklung. Im Juli 2017 schloss ich die Ausbildung zum Fachinformatiker für Anwendungsentwicklung mit der Abschlussnote 2,0 ab.'
+        },
+        {
+          icon: 'fa-university',
+          from: '2017',
+          to: 'heute',
+          title: 'Studium',
+          text:
+            'Im Oktober 2017 begann ich mein Studium im Bereich Wirtschaftsinformatik an der Fachhochschule Münster.'
         },
         {
           icon: 'mdi-xml',
           from: 'Juni 2018',
           to: 'April 2020',
-          title: 'Werkstudent',
+          title: 'Werkstudent Wilken Software Group',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'Nach Abschluss der Ausbildung unterstützte ich die Entwicklungsabteilung weiterhin als Werkstudent bei der Entwicklung von Modulen und Tools der Microsoft Dynamics NAV Branchenlösung und bei der Beratung/Schulung von Kunden des Energieversorgersektors.'
         },
         {
-          icon: '',
-          from: '2017',
-          to: 'heute',
-          title: 'Studium',
+          icon: 'mdi-server-security',
+          from: 'August 2020',
+          to: 'Oktober 2020',
+          title: 'Praktikum Ernst & Young',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'In einem dreimonatigen Praktikum bei der Ernst & Young GmbH Wirtschaftsprüfungsgesellschaft als IT Consultant für IT Audit / IT Prüfung, sammelte ich weitere wertvolle Erfahrungen im Berateralltag und prüfte IT Systeme auf Sicherheitsrisiken im Rahmen der Wirtschaftsprüfung.'
+        },
+        {
+          icon: 'mdi-code-braces',
+          from: 'Mai 2020',
+          to: 'heute',
+          title: 'Werkstudent ZEB',
+          text:
+            'Neben meinem Bachelorstudium bin ich als Full-Stack-Developer bei der zeb.rolfes.schierenbeck.associates gmbh tätig. '
         }
       ]
     }
