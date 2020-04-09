@@ -18,7 +18,7 @@
         <v-theme-provider>
           <v-row>
             <v-col class="text-right mr-8">
-              <h1 class="display-2 font-weight-light	">Impressum</h1>
+              <!-- <h1 class="display-2 font-weight-light	">Impressum</h1>
               <p class="font-weight-thin">Angaben gemäß § 5 TMG:</p>
 
               <p class="font-weight-light">
@@ -29,7 +29,7 @@
               <p class="font-weight-light">
                 <span class="font-weight-light"> E-Mail:</span>
                 schubert.jonas@web.de
-              </p>
+              </p> -->
             </v-col>
 
             <v-col cols="6">
@@ -41,6 +41,7 @@
                       type="text"
                       filled
                       clearable
+                      color="blue-grey darken-4"
                       background-color="white"
                       prepend-icon="mdi-email"
                     ></v-text-field>
@@ -49,6 +50,7 @@
                       type="email"
                       filled
                       clearable
+                      color="blue-grey darken-4"
                       prepend-icon="mdi-email"
                       background-color="white"
                     >
@@ -58,6 +60,8 @@
                       label="Ihre Nachricht"
                       filled
                       clearable
+                      color="blue-grey darken-4"
+                      counter="400"
                       prepend-icon="mdi-email"
                       background-color="white"
                       no-resize
@@ -68,7 +72,7 @@
                 <v-card-actions>
                   <v-btn
                     class="white--text font-weight-bold"
-                    color="blue lighten-1"
+                    color="blue-grey darken-4"
                     block
                   >
                     Senden

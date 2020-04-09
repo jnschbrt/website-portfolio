@@ -60,7 +60,7 @@
 
       <v-btn
         class="white--text font-weight-bold hvr-grow"
-        color="blue lighten-1"
+        color="blue-grey darken-4"
         large
         @click="$vuetify.goTo('#contact')"
       >
