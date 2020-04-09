@@ -1,73 +1,89 @@
 <template>
-  <v-sheet id="contact" color="#333333" dark tag="section" tile>
-    <div class="py-12"></div>
+  <section>
+    <!-- <v-sheet id="contact" color="#333333" dark tag="section" tile> -->
+    <v-img height="800" src="../assets/contact_bg.jpg">
+      <div class="py-12"></div>
 
-    <v-container>
-      <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">
-        Contact Me
-      </h2>
+      <v-container>
+        <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">
+          Kontakt
+        </h2>
 
-      <v-responsive class="mx-auto mb-12" width="56">
-        <v-divider class="mb-1"></v-divider>
+        <v-responsive class="mx-auto mb-12" width="56">
+          <v-divider class="mb-1"></v-divider>
 
-        <v-divider></v-divider>
-      </v-responsive>
+          <v-divider></v-divider>
+        </v-responsive>
 
-      <v-form ref="form" v-model="valid">
-        <v-theme-provider light>
+        <v-theme-provider>
           <v-row>
-            <v-col cols="6">
-              <v-text-field
-                label="Name"
-                filled
-                clearable
-                color="black"
-                background-color="white"
-              ></v-text-field>
-              <v-text-field
-                label="Email"
-                filled
-                clearable
-                color="black"
-                background-color="white"
-              ></v-text-field>
-              <v-text-field
-                label="Betreff"
-                filled
-                clearable
-                color="black"
-                background-color="white"
-              ></v-text-field>
+            <v-col class="text-right mr-8">
+              <h1 class="display-2 font-weight-light	">Impressum</h1>
+              <p class="font-weight-thin">Angaben gemäß § 5 TMG:</p>
+
+              <p class="font-weight-light">
+                <span class="font-weight-bold">Jonas Schubert</span> <br />
+                Weststraße 49 <br />
+                48282 Emsdetten <br />
+              </p>
+              <p class="font-weight-light">
+                <span class="font-weight-light"> E-Mail:</span>
+                schubert.jonas@web.de
+              </p>
             </v-col>
 
             <v-col cols="6">
-              <v-textarea
-                label="Ihre Nachricht"
-                filled
-                clearable
-                color="black"
-                background-color="white"
-                height="228"
-                no-resize
-              ></v-textarea>
-            </v-col>
+              <v-card elevation="3">
+                <v-card-text>
+                  <v-form ref="form" v-model="valid">
+                    <v-text-field
+                      label="Ihr Name"
+                      type="text"
+                      filled
+                      clearable
+                      background-color="white"
+                      prepend-icon="mdi-email"
+                    ></v-text-field>
+                    <v-text-field
+                      label="Ihre E-Mail Adresse"
+                      type="email"
+                      filled
+                      clearable
+                      prepend-icon="mdi-email"
+                      background-color="white"
+                    >
+                    </v-text-field>
 
-            <v-col class="mx-auto" cols="auto">
-              <v-btn
-                class="white--text font-weight-bold hvr-grow"
-                color="blue lighten-1"
-                large
-              >
-                Nachricht senden
-              </v-btn>
+                    <v-textarea
+                      label="Ihre Nachricht"
+                      filled
+                      clearable
+                      prepend-icon="mdi-email"
+                      background-color="white"
+                      no-resize
+                    >
+                    </v-textarea>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions>
+                  <v-btn
+                    class="white--text font-weight-bold"
+                    color="blue lighten-1"
+                    block
+                  >
+                    Senden
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
             </v-col>
           </v-row>
         </v-theme-provider>
-      </v-form>
-    </v-container>
+      </v-container>
 
-    <div class="py-12"></div>
-  </v-sheet>
+      <div class="py-12"></div>
+    </v-img>
+    <!-- </v-sheet> -->
+  </section>
 </template>
 
 <script>
