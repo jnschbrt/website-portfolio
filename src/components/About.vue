@@ -62,6 +62,7 @@
         class="white--text font-weight-bold hvr-grow"
         color="blue lighten-1"
         large
+        @click="$vuetify.goTo('#contact')"
       >
         Get in touch
       </v-btn>
