@@ -1,7 +1,7 @@
 <template>
   <section>
     <!-- <v-sheet id="contact" color="#333333" dark tag="section" tile> -->
-    <v-img height="800" src="../assets/contact_bg.jpg">
+    <v-img height="800">
       <div class="py-12"></div>
 
       <v-container>

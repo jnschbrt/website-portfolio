@@ -1,15 +1,15 @@
 <template>
   <v-parallax src="../assets/parralax.jpg" height="786">
-    <v-row align="center" justify="center">
-      <v-col class="text-center" cols="12">
+    <v-row align="center" justify="center" class="mt-12 pt-12">
+      <v-col class="text-center mt-12 pt-12" cols="12">
         <h1
-          class="font-weight-black mb-8"
+          class="font-weight-bold mb-2"
           :class="[$vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
         >
           Jonas Schubert
         </h1>
         <h2
-          class="font-weight-light"
+          class="font-weight-thin"
           :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
         >
           Full-Stack-Developer
@@ -31,6 +31,10 @@ export default {}
 </script>
 
 <style scoped>
+#bg-image {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 .scroll-downs {
   top: 0;
   right: 0;
