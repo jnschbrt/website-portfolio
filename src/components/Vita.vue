@@ -1,38 +1,39 @@
 <template>
   <section id="vita">
-    <div class="py-12">
-      <v-container class="text-center">
-        <h2 class="display-2 font-weight-bold mb-3" data-aos="zoom-in">
-          VITA
-        </h2>
+    <div class="py-12"></div>
 
-        <v-responsive class="mx-auto mb-8" width="56">
-          <v-divider class="mb-1"></v-divider>
+    <v-container class="text-center">
+      <h2 class="display-2 font-weight-bold mb-3" data-aos="zoom-in">
+        VITA
+      </h2>
 
-          <v-divider></v-divider>
-        </v-responsive>
+      <v-responsive class="mx-auto mb-8" width="56">
+        <v-divider class="mb-1"></v-divider>
 
-        <v-responsive>
-          <v-timeline :align-top="false">
-            <v-timeline-item
-              v-for="(item, i) in items"
-              :key="i"
-              :color="item.color"
-              :icon="item.icon ? item.icon : 'mdi-plus'"
-              :data-aos="i % 2 == 0 ? 'fade-left' : 'fade-right'"
-            >
-              <span slot="opposite">{{ item.from }} - {{ item.to }}</span>
-              <v-card class="elevation-2">
-                <v-card-title class="headline">{{ item.title }}</v-card-title>
-                <v-card-text class="text-justify">
-                  {{ item.text }}
-                </v-card-text>
-              </v-card>
-            </v-timeline-item>
-          </v-timeline>
-        </v-responsive>
-      </v-container>
-    </div>
+        <v-divider></v-divider>
+      </v-responsive>
+
+      <v-responsive>
+        <v-timeline :align-top="false">
+          <v-timeline-item
+            v-for="(item, i) in items"
+            :key="i"
+            color="#01d28e"
+            :icon="item.icon ? item.icon : 'mdi-plus'"
+            :data-aos="i % 2 == 0 ? 'fade-left' : 'fade-right'"
+          >
+            <span slot="opposite">{{ item.from }} - {{ item.to }}</span>
+            <v-card class="elevation-2">
+              <v-card-title class="headline">{{ item.title }}</v-card-title>
+              <v-card-text class="text-justify">
+                {{ item.text }}
+              </v-card-text>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
+      </v-responsive>
+    </v-container>
+    <div class="py-12"></div>
   </section>
 </template>
 

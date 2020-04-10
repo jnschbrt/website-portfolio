@@ -59,8 +59,9 @@
       </v-row>
 
       <v-btn
-        class="white--text font-weight-bold hvr-grow"
-        color="blue-grey darken-4"
+        class="white--text font-weight-black hvr-grow"
+        color="#01d28e"
+        rounded
         large
         @click="$vuetify.goTo('#contact')"
       >

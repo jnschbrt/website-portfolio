@@ -26,6 +26,7 @@
         </v-layout>
       </v-responsive>
     </v-container>
+    <div class="py-12"></div>
   </section>
 </template>
 

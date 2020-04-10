@@ -23,7 +23,7 @@
           >
             <v-theme-provider dark>
               <div>
-                <v-avatar color="primary" size="88">
+                <v-avatar color="#01d28e" size="88">
                   <v-icon large v-text="feature.icon"></v-icon>
                 </v-avatar>
               </div>
