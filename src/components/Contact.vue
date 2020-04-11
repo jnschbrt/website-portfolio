@@ -2,9 +2,9 @@
   <section id="contact">
     <div class="py-12"></div>
 
-    <v-container class="text-center" data-aos="fade-up">
-      <v-theme-provider>
-        <v-card elevation="3">
+    <v-container class="text-center">
+      <v-row class="justify-center">
+        <v-card elevation="3" data-aos="fade-up" width="800">
           <v-card-subtitle>GET IN TOUCH</v-card-subtitle>
           <v-card-title class="justify-center">
             <h2>Kontakt</h2>
@@ -86,7 +86,7 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-      </v-theme-provider>
+      </v-row>
     </v-container>
     <v-snackbar
       v-model="snackbar"
@@ -105,6 +105,7 @@
         Close
       </v-btn>
     </v-snackbar>
+    <div class="py-12"></div>
   </section>
 </template>
 
