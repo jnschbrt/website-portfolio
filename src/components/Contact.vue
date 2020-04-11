@@ -3,34 +3,39 @@
     <div class="py-12"></div>
 
     <v-container class="text-center">
-      <!-- <h2 class="display-2 font-weight-bold mb-3 text-uppercase text-center">
-        Kontakt
-      </h2>
-
-      <v-responsive class="mx-auto mb-12" width="56">
-        <v-divider class="mb-1"></v-divider>
-
-        <v-divider></v-divider>
-      </v-responsive> -->
-
       <v-theme-provider>
         <v-card elevation="3">
           <v-card-subtitle>GET IN TOUCH</v-card-subtitle>
-          <v-card-title class="justify-center"> <h2>Kontakt</h2></v-card-title>
+          <v-card-title class="justify-center">
+            <h2>Kontakt</h2>
+          </v-card-title>
           <v-card-text>
-            <v-form ref="form" v-model="valid">
+            <v-form
+              ref="form"
+              v-model="valid"
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <!-- For netlify, against spam -->
+              <input type="hidden" name="form-name" value="contact" />
               <v-text-field
                 label="Ihr Name"
                 type="text"
+                name="name"
                 filled
                 clearable
                 color="blue-grey darken-4"
                 background-color="white"
                 prepend-icon="mdi-email"
-              ></v-text-field>
+              >
+              </v-text-field>
+
               <v-text-field
                 label="Ihre E-Mail Adresse"
                 type="email"
+                name="email"
                 filled
                 clearable
                 color="blue-grey darken-4"
@@ -43,6 +48,8 @@
                 label="Ihre Nachricht"
                 filled
                 clearable
+                type="text"
+                name="message"
                 color="blue-grey darken-4"
                 counter="400"
                 prepend-icon="mdi-email"
@@ -53,15 +60,19 @@
             </v-form>
           </v-card-text>
           <v-card-actions>
-            <v-btn class="white--text font-weight-bold" color="#01d28e" block>
+            <v-btn
+              class="white--text font-weight-bold"
+              color="#01d28e"
+              block
+              type="submit"
+              @submit.prevent
+            >
               Senden
             </v-btn>
           </v-card-actions>
         </v-card>
       </v-theme-provider>
     </v-container>
-
-    <!-- <div class="py-12"></div> -->
   </section>
 </template>
 

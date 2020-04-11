@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "aos": "^3.0.0-beta.6",
-    "core-js": "^3.6.4",
+    "core-js": "^3.6.5",
+    "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.11",
     "vue-headroom": "^0.10.1",
     "vuetify": "^2.2.11"
