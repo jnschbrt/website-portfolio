@@ -2,7 +2,7 @@
   <section id="contact">
     <div class="py-12"></div>
 
-    <v-container class="text-center">
+    <v-container class="text-center" data-aos="fade-up">
       <v-theme-provider>
         <v-card elevation="3">
           <v-card-subtitle>GET IN TOUCH</v-card-subtitle>

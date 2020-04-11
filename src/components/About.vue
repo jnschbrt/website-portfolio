@@ -38,7 +38,7 @@
         ></v-img>
       </v-avatar>
 
-      <v-row justify="space-around" class="mb-4">
+      <v-row justify="space-around" class="mb-4" data-aos="fade-up">
         <div class="group mb-8">
           <a
             v-for="icon in icons"
@@ -63,6 +63,7 @@
         color="#01d28e"
         rounded
         large
+        data-aos="fade-up"
         @click="$vuetify.goTo('#contact')"
       >
         Get in touch
