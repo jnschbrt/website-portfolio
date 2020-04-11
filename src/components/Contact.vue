@@ -12,7 +12,6 @@
           <v-card-text>
             <v-form
               ref="form"
-              v-model="valid"
               name="contact"
               method="post"
               data-netlify="true"
@@ -20,15 +19,21 @@
             >
               <!-- For netlify, against spam -->
               <input type="hidden" name="form-name" value="contact" />
+
               <v-text-field
                 label="Ihr Name"
                 type="text"
                 name="name"
+                v-model="name"
+                required
+                :error-messages="nameErrors"
                 filled
                 clearable
-                color="blue-grey darken-4"
+                color="#01d28e"
                 background-color="white"
                 prepend-icon="mdi-email"
+                @input="$v.name.$touch()"
+                @blur="$v.name.$touch()"
               >
               </v-text-field>
 
@@ -36,11 +41,16 @@
                 label="Ihre E-Mail Adresse"
                 type="email"
                 name="email"
+                v-model="email"
+                required
+                :error-messages="emailErrors"
                 filled
                 clearable
-                color="blue-grey darken-4"
+                color="#01d28e"
                 prepend-icon="mdi-email"
                 background-color="white"
+                @input="$v.email.$touch()"
+                @blur="$v.email.$touch()"
               >
               </v-text-field>
 
@@ -50,11 +60,16 @@
                 clearable
                 type="text"
                 name="message"
-                color="blue-grey darken-4"
-                counter="400"
+                v-model="message"
+                required
+                :error-messages="messageErrors"
+                color="#01d28e"
+                counter="500"
                 prepend-icon="mdi-email"
                 background-color="white"
                 no-resize
+                @input="$v.message.$touch()"
+                @blur="$v.message.$touch()"
               >
               </v-textarea>
             </v-form>
@@ -65,7 +80,7 @@
               color="#01d28e"
               block
               type="submit"
-              @submit.prevent
+              @click="submit"
             >
               Senden
             </v-btn>
@@ -73,37 +88,118 @@
         </v-card>
       </v-theme-provider>
     </v-container>
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="snackbarTimeout"
+      bottom
+      right
+      color="#01d28e"
+      class="white--text font-weight-bold"
+    >
+      {{ snackbarText }}
+      <v-btn
+        class="white--text font-weight-light"
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
   </section>
 </template>
 
 <script>
+import axios from 'axios'
+import { validationMixin } from 'vuelidate'
+import { required, maxLength, email } from 'vuelidate/lib/validators'
+
 export default {
+  mixins: [validationMixin],
+
+  validations: {
+    name: { required },
+    email: { required, email },
+    message: { required, maxLength: maxLength(500) }
+  },
+
   data: () => ({
-    valid: true,
     name: '',
-    nameRules: [
-      v => !!v || 'Name is required',
-      v => (v && v.length <= 10) || 'Name must be less than 10 characters'
-    ],
     email: '',
-    emailRules: [
-      v => !!v || 'E-mail is required',
-      v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
-    ],
-    select: null,
-    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-    checkbox: false
+    message: '',
+    snackbar: false,
+    snackbarText: 'Nachricht gesendet',
+    snackbarTimeout: 6000
   }),
 
+  computed: {
+    nameErrors() {
+      const errors = []
+      if (!this.$v.name.$dirty) return errors
+      !this.$v.name.required && errors.push('Bitte wählen Sie Ihren Namen')
+      return errors
+    },
+    emailErrors() {
+      const errors = []
+      if (!this.$v.email.$dirty) return errors
+      !this.$v.email.email && errors.push('Keine gültige E-Mail')
+      !this.$v.email.required &&
+        errors.push('Bitte wählen Sie eine E-Mail Adresse')
+      return errors
+    },
+    messageErrors() {
+      const errors = []
+      if (!this.$v.message.$dirty) return errors
+      !this.$v.message.maxLength &&
+        errors.push('Die Nachricht darf nicht mehr als 500 Zeichen umfassen')
+      !this.$v.message.required &&
+        errors.push('Bitte geben Sie Ihre Nachricht ein')
+      return errors
+    }
+  },
+
   methods: {
-    validate() {
-      this.$refs.form.validate()
+    submit() {
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        // when form is invalid
+        return
+      }
+
+      // form valid
+      var form = {
+        name: this.name,
+        email: this.email,
+        message: this.message
+      }
+
+      // post form to netlify
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      }
+      axios.post(
+        '/',
+        this.encode({
+          'form-name': 'contact',
+          ...form
+        }),
+        axiosConfig
+      )
+
+      this.snackbar = true
+
+      // clear form
+      this.$v.$reset()
+      this.name = ''
+      this.email = ''
+      this.message = ''
+      form = {}
     },
-    reset() {
-      this.$refs.form.reset()
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation()
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
     }
   }
 }
