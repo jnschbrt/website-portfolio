@@ -3,12 +3,18 @@
     <div class="py-12"></div>
 
     <v-container class="text-center">
+      <h2 class="display-2 font-weight-bold mb-3" data-aos="fade-down">
+        KONTAKT
+      </h2>
+
+      <v-responsive class="mx-auto mb-8" width="56">
+        <v-divider class="mb-1"></v-divider>
+
+        <v-divider></v-divider>
+      </v-responsive>
+
       <v-row class="justify-center">
         <v-card elevation="3" data-aos="fade-up" width="800">
-          <v-card-subtitle>GET IN TOUCH</v-card-subtitle>
-          <v-card-title class="justify-center">
-            <h2>Kontakt</h2>
-          </v-card-title>
           <v-card-text>
             <v-form
               ref="form"
