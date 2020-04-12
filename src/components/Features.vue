@@ -18,13 +18,13 @@
           <v-card
             class="py-12 px-4"
             color="grey lighten-5"
-            flat
+            height="475"
             :data-aos="feature.animation ? feature.animation : ''"
           >
             <v-theme-provider dark>
               <div>
                 <v-avatar color="#01d28e" size="88">
-                  <v-icon large v-text="feature.icon"></v-icon>
+                  <v-icon x-large v-text="feature.icon"></v-icon>
                 </v-avatar>
               </div>
             </v-theme-provider>
@@ -51,24 +51,24 @@ export default {
     return {
       features: [
         {
-          icon: 'mdi-account-group-outline',
-          title: 'Dienstleistung 1',
+          icon: 'far fa-comments',
+          title: 'Beratung',
           text:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            'Eine fachliche Beratung ist in Zeiten von schier unendlichen Web-Technologien und Frameworks unerlässlich. In engen Kundengesprächen werden kundenspezifische und problemorientierte Lösungsansätze entworfen.',
           animation: 'fade-right'
         },
         {
-          icon: 'mdi-update',
-          title: 'Dienstleistung 2',
+          icon: 'mdi-ruler-square-compass',
+          title: 'Konzeption',
           text:
-            'Sed ut elementum justo. Suspendisse non justo enim. Vestibulum cursus mauris dui, a luctus ex blandit. Lorem ipsum dolor sit amet consectetur adipisicing elit. qui ipsum eveniet facilis obcaecati corrupti consectetur adipisicing elit.',
+            'Erfolgreiche und ansprechende Websites benötigen eine durchdachte und logische Struktur. Aus gegebenen Lösungsansätzen werden Struktur, Inhalte und Navigation abgeleitet.',
           animation: 'fade-up'
         },
         {
-          icon: 'mdi-shield-outline',
-          title: 'Dienstleistung 3',
+          icon: 'mdi-file-code-outline',
+          title: 'Entwicklung',
           text:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto cupiditate sint possimus quidem atque harum excepturi nemo velit tempora! Enim inventore fuga, qui ipsum eveniet facilis obcaecati corrupti asperiores nam',
+            'Moderne und benutzerfreundliche Applikationen erfordern den Einsatz neuster Web-Technologien. Jahrelange Ausbildung, Erfahrungen in unterschiedlichsten Technologien und Frameworks und eine best-practice-orientierte Arbeitsweise schaffen eine erfolgreiche Entwicklung.',
           animation: 'fade-left'
         }
       ]

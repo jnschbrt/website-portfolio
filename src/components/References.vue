@@ -15,12 +15,12 @@
 
       <v-responsive>
         <v-layout row wrap class="justify-around">
-          <v-flex xs12 sm6 md4 lg4 v-for="(item, i) in references" :key="i">
+          <v-flex xs12 sm6 md4 lg6 v-for="(item, i) in references" :key="i">
             <v-card class="ma-3" max-width="600" elevation="2">
-              <v-card-text> {{ item.text }}</v-card-text>
+              <v-card-text class="text-justify"> "{{ item.text }}"</v-card-text>
               <v-card-actions>
-                <span class="body-2 font-weight-light">
-                  - {{ item.title }}</span
+                <span class="body-2 font-italic" id="refTitle"
+                  >- {{ item.title }}</span
                 >
               </v-card-actions>
             </v-card>
@@ -38,34 +38,14 @@ export default {
     return {
       references: [
         {
-          title: 'Referenz 1',
+          title: 'Ausbildungszeugnis Wilken Software Group GmbH',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'Herr Schubert bewies während der gesamten Ausbildungsdauer ein überdurchschnittliches Engagement und eine stets sehr gute Auffassungsgabe, aufgrund derer er sich extrem rasch auf neue Ausbildungsinhalte einstellen konnte. Er konnte daher sehr schnell effektiv in Arbeitsabläufe eingebunden werden. Auch bei hohen Belastungen bewältigte er seine Aufgaben stets termingerecht und zu unserer vollen Zufriedenheit.'
         },
         {
-          title: 'Referenz 2',
+          title: 'Praktikumszeugnis Ernst & Young',
           text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
-        },
-        {
-          title: 'Referenz 3',
-          text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
-        },
-        {
-          title: 'Referenz 4',
-          text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
-        },
-        {
-          title: 'Referenz 5',
-          text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
-        },
-        {
-          title: 'Referenz 6',
-          text:
-            'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+            'Herr Schubert identifizierte sich stets gut mit seinen Aufgaben und zeichnete sich durch eine stets hohe Lern- und Arbeitsmotivation aus. Er war ein stets zuverlässig und selbstständig arbeitender Praktikant. Herr Schubert verfügt über ein gutes analytisches Denkvermögen. Auch bei schwierigen Aufgaben stellte er seine Leistungsfähigkeit jederzeit unter Beweis. Bei seiner Arbeit erzielte er in qualitativer und quantitativer Hinsicht stets gute bis sehr gute Ergebnisse.'
         }
       ]
     }
@@ -73,4 +53,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+#refTitle {
+  color: #01d28e;
+}
+</style>
