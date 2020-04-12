@@ -16,11 +16,13 @@
       <v-responsive>
         <v-layout row wrap class="justify-around">
           <v-flex xs12 sm6 md4 lg4 v-for="(item, i) in references" :key="i">
-            <v-card class="ma-3" max-width="600">
-              <v-card-subtitle justify="left">
-                <span class="title font-weight-light">{{ item.title }}</span>
-              </v-card-subtitle>
+            <v-card class="ma-3" max-width="600" elevation="2">
               <v-card-text> {{ item.text }}</v-card-text>
+              <v-card-actions>
+                <span class="body-2 font-weight-light">
+                  - {{ item.title }}</span
+                >
+              </v-card-actions>
             </v-card>
           </v-flex>
         </v-layout>
