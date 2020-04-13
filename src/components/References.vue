@@ -16,7 +16,12 @@
       <v-responsive>
         <v-layout row wrap class="justify-around">
           <v-flex xs12 sm6 md4 lg6 v-for="(item, i) in references" :key="i">
-            <v-card class="ma-3" max-width="600" elevation="2">
+            <v-card
+              class="ma-3"
+              max-width="600"
+              elevation="2"
+              :data-aos="i % 2 == 0 ? 'fade-right' : 'fade-left'"
+            >
               <v-card-text class="text-justify"> "{{ item.text }}"</v-card-text>
               <v-card-actions>
                 <span class="body-2 font-italic" id="refTitle"
