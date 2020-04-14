@@ -1,36 +1,44 @@
 <template>
-  <v-parallax src="../assets/parralax.jpg" height="786">
-    <v-row align="center" justify="center" class="mt-12 pt-12">
-      <v-col class="text-center mt-12 pt-12" cols="12">
-        <h1
-          class="font-weight-bold mb-2"
-          :class="[$vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4']"
-          data-aos="fade-down"
-        >
-          Jonas Schubert
-        </h1>
-        <h2
-          class="font-weight-thin"
-          :class="[$vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2']"
-          data-aos="fade-up"
-        >
-          Full-Stack-Developer
-        </h2>
-      </v-col>
-    </v-row>
-    <v-row>
-      <div
-        class="scroll-downs"
-        @click="$vuetify.goTo('#about-me')"
-        data-aos="zoom-in"
-        data-aos-offset="-200"
-      >
-        <div class="mousey">
-          <div class="scroller"></div>
-        </div>
-      </div>
-    </v-row>
-  </v-parallax>
+  <section id="hero">
+    <v-img src="../assets/parralax.jpg" height="100vh">
+      <v-container fill-height>
+        <v-row align="center" justify="center" class="white--text mt-12 pt-12">
+          <v-col class="text-center mt-12 pt-12" cols="12">
+            <h1
+              class="font-weight-bold mb-2"
+              :class="[
+                $vuetify.breakpoint.smAndDown ? 'display-3' : 'display-4'
+              ]"
+              data-aos="fade-down"
+            >
+              Jonas Schubert
+            </h1>
+            <h2
+              class="font-weight-thin"
+              :class="[
+                $vuetify.breakpoint.smAndDown ? 'display-1' : 'display-2'
+              ]"
+              data-aos="fade-up"
+            >
+              Full-Stack-Developer
+            </h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <div
+            class="scroll-downs"
+            @click="$vuetify.goTo('#about-me')"
+            data-aos="zoom-in"
+            data-aos-offset="-200"
+          >
+            <div class="mousey">
+              <div class="scroller"></div>
+            </div>
+          </div>
+        </v-row>
+      </v-container>
+    </v-img>
+  </section>
 </template>
 
 <script>
