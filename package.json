@@ -15,7 +15,7 @@
     "vue": "^2.6.11",
     "vue-headroom": "^0.10.1",
     "vuelidate": "^0.7.5",
-    "vuetify": "^2.2.11"
+    "vuetify": "^2.2.22"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
