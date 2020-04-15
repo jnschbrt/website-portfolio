@@ -13,7 +13,6 @@
     "core-js": "^3.6.5",
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.11",
-    "vue-headroom": "^0.10.1",
     "vuelidate": "^0.7.5",
     "vuetify": "^2.2.22"
   },
