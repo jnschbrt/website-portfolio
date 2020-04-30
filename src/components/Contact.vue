@@ -1,5 +1,5 @@
 <template>
-  <section id="contact">
+  <section id="contact" class="grey lighten-3">
     <div class="py-12"></div>
 
     <v-container class="text-center">
@@ -126,7 +126,7 @@ export default {
   validations: {
     name: { required },
     email: { required, email },
-    message: { required, maxLength: maxLength(500) }
+    message: { required, maxLength: maxLength(500) },
   },
 
   data: () => ({
@@ -135,7 +135,7 @@ export default {
     message: '',
     snackbar: false,
     snackbarText: 'Nachricht gesendet',
-    snackbarTimeout: 6000
+    snackbarTimeout: 6000,
   }),
 
   computed: {
@@ -161,7 +161,7 @@ export default {
       !this.$v.message.required &&
         errors.push('Bitte geben Sie Ihre Nachricht ein')
       return errors
-    }
+    },
   },
 
   methods: {
@@ -176,18 +176,18 @@ export default {
       var form = {
         name: this.name,
         email: this.email,
-        message: this.message
+        message: this.message,
       }
 
       // post form to netlify
       const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
       }
       axios.post(
         '/',
         this.encode({
           'form-name': 'contact',
-          ...form
+          ...form,
         }),
         axiosConfig
       )
@@ -204,11 +204,11 @@ export default {
     encode(data) {
       return Object.keys(data)
         .map(
-          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
         )
         .join('&')
-    }
-  }
+    },
+  },
 }
 </script>
 
