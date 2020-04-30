@@ -6,7 +6,7 @@
       <About />
       <Features />
       <Vita />
-      <References />
+      <!-- <References /> -->
       <Contact />
     </v-content>
     <Footer />
@@ -19,7 +19,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Features from './components/Features'
 import Vita from './components/Vita'
-import References from './components/References'
+//import References from './components/References'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -32,10 +32,10 @@ export default {
     About,
     Features,
     Vita,
-    References,
+    //References,
     Contact,
-    Footer
+    Footer,
   },
-  data: () => ({})
+  data: () => ({}),
 }
 </script>
