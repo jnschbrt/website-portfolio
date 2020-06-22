@@ -14,7 +14,7 @@
     "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.11",
     "vuelidate": "^0.7.5",
-    "vuetify": "^2.2.25"
+    "vuetify": "^2.3.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
